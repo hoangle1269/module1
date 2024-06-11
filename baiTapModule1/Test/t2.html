@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    // function timChuHoa(chuoiKyTu) {
+    //     let count = 0;
+    //     for (let i = 0; i < chuoiKyTu.length; i++) {
+    //         if (chuoiKyTu[i].toUpperCase() === chuoiKyTu[i]) {
+    //             count++;
+    //         } else
+    //             count = 0;
+    //     }
+    //     return count;
+    // }
+    //
+    // let chuoiKyTu = "CongHoaXaHoiChuNghiaVietNam";
+    // let ketqua = timChuHoa(chuoiKyTu);
+    //
+    // document.write(ketqua);
+
+    function timChuHoa(chuoiKyTu) {
+        let count = 0; // Đếm số lượng ký tự in hoa
+        for (let i = 0; i < chuoiKyTu.length; i++) {
+            // Kiểm tra nếu ký tự là chữ cái và là chữ hoa
+            if (chuoiKyTu[i] === chuoiKyTu[i].toUpperCase()) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            return count;
+        } else {
+            return "The string does not contain upper char";
+        }
+    }
+
+    let chuoiKyTu = "CongHoaXaHoiChuNghiaVietNam";
+    let ketqua = timChuHoa(chuoiKyTu);
+    document.write(ketqua); // Output sẽ là số lượng ký tự in hoa hoặc thông báo
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beer Catcher Game</title>
+    <style>
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+        }
+        #playAgain {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 18px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="score">Score: 0</div>
+<button id="playAgain">Play Again</button>
+<img src="Bia.png" alt="Beer 1" style="width: 100px; top: 0; left: 0; position: absolute;" id="bia1">
+<img src="Bia.png" alt="Beer 2" style="width: 100px; top: 0; left: 0; position: absolute;" id="bia2">
+<img src="Bia.png" alt="Beer 3" style="width: 100px; top: 0; left: 0; position: absolute;" id="bia3">
+<img src="Gio.jpg" alt="Basket" style="width: 100px; bottom: 0; left: 50%; transform: translateX(-50%); position: absolute;" id="gio">
+
+<script>
+    // Get references to the images, score div, and play again button
+    var gio = document.getElementById('gio');
+    var scoreDisplay = document.getElementById('score');
+    var playAgainButton = document.getElementById('playAgain');
+
+    var beers = [
+        { element: document.getElementById('bia1'), position: { x: 0, y: 0 } },
+        { element: document.getElementById('bia2'), position: { x: 0, y: 0 } },
+        { element: document.getElementById('bia3'), position: { x: 0, y: 0 } }
+    ];
+
+    // Initial position of the basket
+    var basketPosition = { x: window.innerWidth / 2, y: window.innerHeight - 100 };
+    gio.style.left = basketPosition.x + 'px';
+
+    var score = 0;
+    var gameOver = false;
+
+    // Move the basket left or right with arrow keys
+    document.addEventListener('keydown', function (event) {
+        if (!gameOver) {
+            if (event.key === 'ArrowLeft') {
+                basketPosition.x -= 20;
+                gio.style.left = basketPosition.x + 'px';
+            } else if (event.key === 'ArrowRight') {
+                basketPosition.x += 20;
+                gio.style.left = basketPosition.x + 'px';
+            }
+        }
+    });
+
+    // Function to move a single beer
+    function moveBeer(beer) {
+        beer.position = { x: Math.random() * (window.innerWidth - 100), y: 0 };
+        beer.element.style.top = beer.position.y + 'px';
+        beer.element.style.left = beer.position.x + 'px';
+
+        var speed = 5; // Change this value to adjust speed
+        var interval = setInterval(function () {
+            if (gameOver) {
+                clearInterval(interval);
+                return;
+            }
+
+            beer.position.y += speed;
+            beer.element.style.top = beer.position.y + 'px';
+
+            // Check for collision with basket
+            if (beer.position.y + 100 >= basketPosition.y && beer.position.x + 100 >= basketPosition.x && beer.position.x <= basketPosition.x + 100) {
+                clearInterval(interval);
+                score += 100;
+                scoreDisplay.innerText = 'Score: ' + score;
+                moveBeer(beer);
+            }
+
+            // Check for collision with bottom
+            if (beer.position.y >= window.innerHeight) {
+                clearInterval(interval);
+                gameOver = true;
+                alert('Game over! Your final score is: ' + score);
+                playAgainButton.style.display = 'block';
+            }
+        }, 50);
+    }
+
+    // Function to start the game
+    function startGame() {
+        gameOver = false;
+        score = 0;
+        scoreDisplay.innerText = 'Score: ' + score;
+        playAgainButton.style.display = 'none';
+
+        beers.forEach(function (beer) {
+            moveBeer(beer);
+        });
+    }
+
+    // Start the game initially
+    startGame();
+
+    // Add event listener to play again button
+    playAgainButton.addEventListener('click', function () {
+        startGame();
+    });
+</script>
+
+</body>
+</html>

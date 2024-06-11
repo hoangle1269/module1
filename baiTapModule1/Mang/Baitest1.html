@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let diemThi = [];
+    let soLuong = parseInt(prompt("Nhap vao so hoc sinh: "), 10);
+
+    for (let i = 0; i < soLuong; i++) {
+        let d = parseFloat(prompt("Nhap diem vao: "));
+        diemThi.push(d);
+    }
+
+    function findAvg() {
+        let tongDiem = 0;
+
+        for (let j = 0; j < diemThi.length; j++) {
+            tongDiem += diemThi[j];
+        }
+
+        let diemTb = tongDiem / diemThi.length;
+
+        // Display the scores (optional)
+        for (let j = 0; j < diemThi.length; j++) {
+            document.write(diemThi[j] + (j < diemThi.length - 1 ? ", " : ""));
+        }
+
+        return diemTb;
+    }
+
+    alert("Diem trung binh: " + findAvg());
+
+
+
+
+</script>
+</body>
+</html>

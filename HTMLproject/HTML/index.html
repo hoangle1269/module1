@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted min width */
+            gap: 20px;
+        }
+        .photo {
+            width: 100%; /* Adjusted to take up full width of grid cell */
+            height: auto; /* Ensures aspect ratio is maintained */
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<center>
+    <body>
+<h1>Photos</h1>
+<div class="gallery">
+    <img class="photo" src="https://source.unsplash.com/800x600/?landscapes" alt="Photo 1">
+    <img class="photo" src="https://source.unsplash.com/800x600/?lions" alt="Photo 2">
+    <img class="photo" src="https://source.unsplash.com/800x600/?natures" alt="Photo 3">
+    <img class="photo" src="https://source.unsplash.com/800x600/?fields" alt="Photo 4">
+    <!-- Add more images as needed -->
+</div>
+</body>
+</center>
+</html>

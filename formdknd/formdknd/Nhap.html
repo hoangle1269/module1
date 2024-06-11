@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="inp1">
+<input type="text" id="inp2">
+<button onclick="
+    let x = document.getElementById('inp1').value;
+    let y = document.getElementById('inp2').value;
+    document.getElementById('rs').innerHTML = x*y; // = x+'*'+y+'=' + x*y;
+    document.getElementById('rs').innerHTML = x+'*'+y+'=' + x*y;
+    document.getElementById('inp1').value = ''
+    document.getElementById('inp2').value = ''
+    ">Multiply</button>
+<h1 id = 'rs'></h1>
+<script>
+    //DOM: là một đối tượng dể dùng JS tương ta vơi HTML
+    // Sau khi ấn nút phải xóa trắng input
+    // hiện cả phép toán: 8* 10 =80;
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<body>
+<img src="Bia.jpg" alt="" id="bia" style="position:absolute; left:0; top:0;" width="40" height="160">
+<img src="Gio.jpg" alt="" id="gio" style="position:absolute; left:0; bottom:0;" width="100" height="100">
+
+<script>
+    function leftArrowPressed() {
+        let caiGio = document.getElementById("gio");
+        let newLeft = (parseInt(caiGio.style.left) || 0) - 20;
+        if (newLeft >= 0) { // Prevent moving out of the left boundary
+            caiGio.style.left = newLeft + 'px';
+        }
+    }
+
+    function rightArrowPressed() {
+        let caiGio = document.getElementById("gio");
+        let newLeft = (parseInt(caiGio.style.left) || 0) + 20;
+        if (newLeft + caiGio.offsetWidth <= window.innerWidth * 2 / 3) { // Prevent moving out of the right boundary (2/3 of the screen)
+            caiGio.style.left = newLeft + 'px';
+        }
+    }
+
+    function moveLeftRight(event) {
+        switch (event.keyCode) {
+            case 37: // Left arrow key
+                leftArrowPressed();
+                break;
+            case 39: // Right arrow key
+                rightArrowPressed();
+                break;
+        }
+    }
+
+    let v = 5;
+    let chaiBia = document.getElementById("bia");
+    let caiGio = document.getElementById("gio");
+
+    setInterval(() => {
+        chaiBia.style.top = parseInt(chaiBia.style.top) + v + "px";
+        biaGioVaCham(chaiBia, caiGio);
+        checkBottomLimit(chaiBia);
+    }, 30);
+
+    function biaGioVaCham(chaiBia, caiGio) {
+        let chaiBiaRect = chaiBia.getBoundingClientRect();
+        let caiGioRect = caiGio.getBoundingClientRect();
+
+        if (
+            chaiBiaRect.left + chaiBiaRect.width >= caiGioRect.left &&
+            chaiBiaRect.left <= caiGioRect.left + caiGioRect.width &&
+            chaiBiaRect.top + chaiBiaRect.height >= caiGioRect.top &&
+            chaiBiaRect.top <= caiGioRect.top + caiGioRect.height
+        ) {
+            chaiBia.style.top = '0px';
+            chaiBia.style.left = Math.random() * (window.innerWidth * 2 / 3 - chaiBiaRect.width) + 'px';
+        }
+    }
+
+    function checkBottomLimit(chaiBia) {
+        if (parseInt(chaiBia.style.top) + chaiBia.offsetHeight >= window.innerHeight) {
+            alert("Ban da thua");
+            chaiBia.style.top = '0px';
+            chaiBia.style.left = Math.random() * (window.innerWidth * 2 / 3 - chaiBia.offsetWidth) + 'px';
+        }
+    }
+
+    function doReady() {
+        window.addEventListener('keydown', moveLeftRight);
+    }
+
+    doReady();
+</script>
+</body>

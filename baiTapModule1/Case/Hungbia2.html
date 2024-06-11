@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Move Images</title>
+</head>
+<body>
+<img src="Bia.png" alt="" id="bia" style="position:absolute; left:0; top:0;" width="110" height="139">
+<img src="Gio.jpg" alt="" id="gio" style="position:absolute; left:0; bottom:0;" width="100" height="100">
+
+<script>
+
+    function leftArrowPressed() {
+        let element = document.getElementById("gio");
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+    }
+
+    function rightArrowPressed() {
+        let element = document.getElementById("gio");
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+    }
+
+    function moveLeftRight(event) {
+        switch (event.keyCode) {
+            case 37: // Left arrow key
+                leftArrowPressed();
+                break;
+            case 39: // Right arrow key
+                rightArrowPressed();
+                break;
+        }
+    }
+
+    function doReady() {
+        window.addEventListener('keydown', moveLeftRight);
+    }
+
+    doReady();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //for (let i = 1; i <=100; i++){
+    //     document.write(i + '<br>');
+    //     if (i===99){
+    //         document.write("Da hoan thanh" + '<br>');
+    //     }
+    // }
+    //tư duy
+    // let a1 = 1;
+    // let a2 = 2;
+    // let a3 = a1 + a2;
+    // let a4.....
+    // -> too much, impossible
+
+    // for (let i = 1; i <=100; i++){
+    //     if (i===1 && i === 2){
+    //         document.write('1');
+    //     }
+    //     if (i >2){
+    //         document.write(i = (i-1) + (i-2));
+    //     }
+    //
+    // }
+    //
+    // let a1 = 1;
+    // let a2 = 2;
+    // while (a2 <= 100){
+    //     let x = a1 + a2;
+    //     a1 = a2;
+    //     a2 = x;
+    //     document.write(a1 + 'br');
+    // }
+    // let dem = 2;
+    // while (dem <= 10){
+    //     document.write(a1 + 'br');
+    //     let x = a1 + a2;
+    //     a1 = a2;
+    //     a2 = x;
+    //     dem++;
+    // }
+    // let a = 0, b = 1, temp;
+    // document.write(a + ", " + b);
+    //
+    // for (let i = 2; i < 20; i++) {
+    //     temp = a + b;
+    //     document.write(", " + temp);
+    //     a = b;
+    //     b = temp;
+    // }
+    // let dem = 0;
+    // for (let x = 3; dem <= 20; x++) {
+    //     let kq = true;
+    //     for (let i = 2; i <= Math.sqrt(x); i++) {
+    //         if (x % i === 0) {
+    //             kq = false;
+    //             break;
+    //         }
+    //     }
+    //     if (kq) {
+    //         document.write(x + '<br>');
+    //         dem++;
+    //     }
+    //         //if (dem >20){
+    //         // break;}
+    //
+    // }
+    // let temperature;
+    //
+    // for (;;) {
+    //     temperature = parseInt(prompt("Nhập nhiệt độ hiện tại:"));
+    //
+    //     if (temperature > 100) {
+    //         alert("Nhiệt độ hiện tại quá cao. Vui lòng giảm nhiệt độ.");
+    //     } else if (temperature < 20) {
+    //         alert("Nhiệt độ hiện tại quá thấp. Vui lòng tăng nhiệt độ.");
+    //     } else {
+    //         alert("Nhiệt độ hiện tại ở mức bình thường.");
+    //         break;
+    //         //temperature = parseInt(prompt("Nhập nhiệt độ hiện tại:"));
+    //
+    //     }
+    // }
+    // let temperature = parseInt(prompt("Nhập nhiệt độ hiện tại:"));
+    //
+    // while (true) {
+    //     if (temperature > 100) {
+    //         alert("Nhiệt độ hiện tại quá cao. Vui lòng giảm nhiệt độ.");
+    //         temperature = parseInt(prompt("Nhập lại nhiệt độ hiện tại:"));
+    //     } else if (temperature < 20) {
+    //         alert("Nhiệt độ hiện tại quá thấp. Vui lòng tăng nhiệt độ.");
+    //         temperature = parseInt(prompt("Nhập lại nhiệt độ hiện tại:"));
+    //     } else {
+    //         alert("Nhiệt độ hiện tại ở mức bình thường.");
+    //         break;
+    //     }
+    // }
+
+    // let F = 0 , F0= 0, F1=0
+    // let fibonacci = "";
+    // for (let i=0; i<1000;i++){
+    //     if(i===0){
+    //         F=1
+    //         F1=1
+    //         fibonacci += F+ " "
+    //     }else{
+    //
+    //         F= F0+F1
+    //         F0 = F1
+    //         F1 = F
+    //         fibonacci += F+ " "
+    //         console.log(i +" = "+F)
+    //     }
+    // }
+    // document.write(fibonacci)
+    // function fibonacci(num){
+    //     let a = 1, b= 0, temp;
+    //     while (num >=0){
+    //         temp =a;
+    //         a = a+b;
+    //         b= temp;
+    //         num--;
+    //     }
+    //     return b;
+    // }
+    // let x; //lập biến x để chạy (trong for là điều kiện để biến x chạy)
+    // let count = 0; //biến count de dem tu 0 den 30
+    // let tong = 0; //tong bang 0/ tich thi de la 1;
+    // for (x=1; count < 30; x++){ //x bat dau tu 1 vi 0/7=0
+    //     if (x%7===0){
+    //         document.write(x + '<br>');
+    //         count++;
+    //         tong += x;
+    //     }
+    // }
+    // document.write(tong);
+    // let tong = 0;
+    // for (let i=0; i<=100; i++){
+    //     tong = tong + i;
+    // }
+    // document.write(tong);
+
+    // let n = +prompt("Nhap vao so nguyen duong: ");
+    // let giaithua = 1;
+    // for (let i=1; i<=n; i++){
+    //     giaithua *= i;
+    //     console.log(giaithua);
+    //
+    // }
+    // document.write(giaithua);
+
+    //
+    // let i='';
+    // for (let n=1; n<=15; n++){
+    //     i += '*';
+    //     document.write(i +'<br>');
+    // }
+    //5* -> 1*
+    // for (let i = 5; i >= 1; i--) {
+    //     let stars = '';
+    //     for (let j = 1; j <= i; j++) {
+    //         stars += '*';
+    //         console.log(stars);
+    //     }
+    //     console.log(stars);
+    //     document.write(stars +'<br>');
+    // }
+    // <pre id="triangle"></pre>
+
+    let rows = 5;
+    let triangle = '';
+
+    for (let i = 0; i < rows; i++) {
+        let spaces = '';
+        let stars = '';
+        let j = 0;
+
+        while (j < i * 2) {
+            spaces += ' ';
+            j++;
+        }
+        j = 0;
+        while (j < rows - i) {
+            stars += '*';
+            j++;
+        }
+        triangle += spaces + stars + '<br>';
+    }
+
+    document.write(triangle);
+
+
+</script>
+</html>

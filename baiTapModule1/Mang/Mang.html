@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mang</title>
+</head>
+<body>
+<script>
+    //let a = [0, 1, 2, 3, 4, 11, 33, 44, 55, 66, 99, 79, 81]; //khai bao
+    // alert(a.length); //lay ra so luong phan tu
+    // alert(a[4]); // truy xuat theo vi tri
+    // alert(a[a.length-1]) //truy xuat phan tu cuoi cung
+    // for (let i = 0; i < a.length; i++){
+    //     document.write(a[i]+"<br>");
+    // }
+    //in ra cac phan tu chan
+    //in tong cac phan tu le
+    //in tich cac phan tu chia het cho 3
+    //dem cac phan tu > 10
+    // let a = [0, 1, 2, 3, 4, 11, 33, 44, 55, 66, 99, 79, 81];
+    // let soChan = 'Các phần tử chẵn: ';
+    //
+    // for (let i = 0; i < a.length; i++) {
+    //     if (a[i] % 2 === 0) {
+    //         soChan += a[i] + ' ';
+    //     }
+    // }
+    // document.write(soChan);
+    // let tongLe = 0;
+    //
+    // // Duyệt qua các phần tử của mảng
+    // for (let i = 0; i < a.length; i++) {
+    //     if (a[i] % 2 !== 0) {
+    //         tongLe += a[i];
+    //     }
+    // }
+    //
+    // // In kết quả ra màn hình
+    // document.write('Tổng các phần tử lẻ: ' + tongLe);
+    // let multiba = 1;
+    // for (let i = 0; i < a.length; i++) {
+    //     if (a[i] % 2 === 3) {
+    //         multiba *= a[i];
+    //     }
+    // }
+    // document.write('Tich 3: ' + multiba);
+    // for (let i = 0; i < a.length; i++) {
+    //     if (a[i] % 2 === 3) {
+    //         multiba *= a[i];
+    //     }
+    // }
+    // document.write('Tich 3: ' + multiba);
+    // let dem = 0;
+    // for (let i = 0; i < a.length; i++) {
+    //     if (a[i] > 10) {
+    //         dem++;
+    //     }
+    // }
+    // document.write('Dem: ' + dem);
+    // let a = [0, 1, 2, 3, 4, 11, 33, 44, 55, 66, 99, 79, 81];
+    // let max = a[0];
+    // for (let i = 0; i <a.length; i++){
+    //     if (max < a[i]){
+    //         max = a[i];
+    //     }
+    // }
+    // document.write(max +'<br>');
+    //
+    // let min = a[0];
+    // for (let i = 0; i < a.length; i++){
+    //     if (min > a[i]){
+    //         min = a[i];
+    //     }
+    // }
+    // document.write(min);
+
+    //nhap vao x, tim vi tri cua x trong mang, neu co thi in vi tri, neu khong thi in -1
+    // let x = +prompt('Nhap x vào day: ');
+    //
+    // a.push(x);
+    // let viTri = -1;
+    // for (let i = 0; i < a.length; i++) {
+    //     if (a[i] === x) {
+    //         viTri = i;
+    //         break;
+    //     }
+    // }
+    // document.write('Giá trị ' + x + ' ở vị trí: ' + viTri)
+    // let arr = [];
+    //
+    // // Sử dụng vòng lặp for để yêu cầu người dùng nhập phần tử
+    // for (;;) {  // Đây là một vòng lặp vô hạn
+    //     let input = prompt("Nhập một số (nhập -1 để kết thúc):");
+    //     let num = parseInt(input);
+    //
+    //     // Kiểm tra nếu nhập -1 thì thoát khỏi vòng lặp
+    //     if (num === -1) {
+    //         break;
+    //     }
+    //
+    //     // Nếu không phải -1, thêm số vào mảng
+    // }
+    //
+    // // Hiển thị các phần tử của mảng
+    // document.write("Các phần tử của mảng là: " + arr.join(", "));
+
+    // let brr = [];
+    // while (true){
+    //     let input = prompt("Nhập vào phần tử của mảng (nhập -1 để kết thúc): ");
+    //     let num = parseInt(input);
+    //
+    //     // Kiểm tra nếu nhập -1 thì thoát khỏi vòng lặp
+    //     if (num === -1) {
+    //         break;
+    //     }
+    //
+    //     // Thêm phần tử vào mảng
+    //     brr.push(num);
+    // }
+    //
+    // // In ra các phần tử của mảng
+    // //document.write("Các phần tử của mảng là: " + brr.join(", "));
+    // document.write(brr);
+
+    // let a = [];
+    //
+    // // Sử dụng vòng lặp để nhập 10 phần tử
+    // for (let i = 0; i < 10; i++) {
+    //     let input = prompt("Nhập phần tử thứ " + (i + 1) + ":");
+    //     a.push(parseInt(input));
+    // }
+    //
+    // // Hiển thị mảng sau khi nhập xong
+    // document.write("Mảng đã nhập: " + a.join(", ") + "<br>");
+    //
+    // // Hiển thị các số lớn hơn hoặc bằng 10
+    // document.write("Các số lớn hơn hoặc bằng 10 trong mảng:<br>");
+    // for (let i = 0; i < a.length; i++) {
+    //     if (a[i] >= 10) {
+    //         document.write(a[i] + "<br>");
+    //     }
+    // }
+
+    // let a = [];
+    // for (let i = 0; i < 10; i++) {
+    //     let input = prompt("Nhap phan tu: ", ''); // Fixed variable name from "i" to "input"
+    //     a.push(parseInt(input));
+    //     document.write(input + "<br>"); // Changed to print the input value, and added line break
+    // }
+    // document.write(a);
+
+    // let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    //
+    // for (let ele in a){
+    //     document.write(a + '<br>');
+    // }
+    // let a = [
+    //     [1, 2, 3, 4],
+    //     [2, 3, 4, 5],
+    //     [4, 5, 6, 7],
+    //     [5, 6, 7, 8],
+    //     [7, 8, 9, 10]
+    // ];
+    //
+    // for (let i=0; i<a.length; i++){
+    //     document.write("row "+ i);
+    //     for (let j=0; j<a[i].length; j++){
+    //         document.write(" "+ a[i][j]);
+    //     }
+    // }
+    // let a = ['p', 'e', 'p', 's', 'i'];
+    // a.reverse().join()
+    // for (let ele in a){
+    //     document.write(a[ele]);
+    // }
+
+    let arr = [];
+    let n = prompt("So phan tu cua mang: ", '');
+    let count = 0;
+    let daCo = "";
+
+    while (count < n) {
+        count++;
+        let phanTu = +prompt("Nhap phan tu: ", '');
+        daCo = phanTu;
+        if (phanTu!==daCo){
+            arr.push(phanTu);
+        }
+
+    }
+    for (let i=0; i < arr.length; i++){
+        document.write(arr[i] + '<br>');
+    }
+
+
+</script>
+
+</body>
+</html>

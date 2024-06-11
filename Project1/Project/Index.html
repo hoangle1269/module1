@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper-style Header</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh; /* Set the container height to fill the viewport */
+            display: flex;
+            align-items: flex-end; /* Align content at the bottom */
+        }
+
+        .big-header {
+            position: absolute;
+            left: 20px; /* Adjust as needed */
+            bottom: 20px; /* Adjust as needed */
+            font-size: 2.5em; /* Adjust font size */
+            color: #333; /* Header color */
+            background-color: #f9f9f9; /* Header background color */
+            padding: 10px; /* Header padding */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Page Header</h1>
+</header>
+
+<div class="container">
+    <div class="big-header">
+        <h2>Big Header</h2>
+    </div>
+</div>
+
+</body>
+</html>

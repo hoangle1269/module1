@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // let a = [1, 2, 3, 4, 5, 6, 7, 8 ,9 , 10];
+    // for (a[i]>10;;){
+    //     document.write(i);
+    // }
+    // Khởi tạo mảng trống
+    // let a = [];
+    //
+    // // Sử dụng vòng lặp để nhập 10 phần tử
+    // for (let i = 0; i < 10; i++) {
+    //     let input = prompt("Nhập phần tử thứ " + (i + 1) + ":");
+    //     a.push(parseInt(input));
+    // }
+    //
+    // // Hiển thị mảng sau khi nhập xong
+    // document.write("Mảng đã nhập: " + a.join(", "));
+
+    // let a = [];
+    //
+    // for (let i = 0; i<=10; i++){
+    //     let n = prompt("Nhap vao so nguyen: ", '');
+    //     a.push(n);
+    //     let count = 0;
+    //     if (n>50){
+    //         count++;
+    //         document.write(n + '<br>');
+    //     }
+    // }
+    // document.write(a);
+
+    // let a = [];
+    //
+    // for (let i = 0; i <= 10; i++){
+    //     let n = prompt("Nhap vao mang: ", '');
+    //
+    // }
+    // let a = []; // Khởi tạo mảng trống
+    // let existingNumbers = {}; // Khởi tạo một đối tượng để theo dõi các giá trị đã tồn tại
+    //
+    // for (let i = 0; i < 10; i++) {
+    //     let input;
+    //     let number = prompt("Nhap vao mang: ", '');
+    //     do{
+    //         input = prompt("Nhap lai so khac: ", '');
+    //     }while (number === existingNumbers);
+    //
+    //     a.push(number); // Thêm phần tử vào mảng
+    //     existingNumbers[number] = true; // Cập nhật đối tượng để đánh dấu số này đã tồn tại
+    // }
+    //
+    // document.write(a);
+
+    // let numbers = [1, 2, 'three', 4, 5, 5, 6, NaN, 7, 8];
+    // let existingNumbers = {};
+    //
+    // for (let i = 0; i < numbers.length; i++) {
+    //     let number = numbers[i];
+    //     if (!isNaN(number) && !existingNumbers[number]) {
+    //         existingNumbers[number] = true;
+    //         document.write("Thêm số: " + number + "<br>");
+    //     } else {
+    //         document.write("Bỏ qua số: " + number + "<br>");
+    //     }
+    // }
+    // let a = [1, 2, 3, 4, 5];
+    // let number = 6;
+    //
+    // if (a.indexOf(number) === -1) {
+    //     console.log("Phần tử " + number + " không tồn tại trong mảng.");
+    // } else {
+    //     console.log("Phần tử " + number + " tồn tại trong mảng.");
+    // }
+
+    // let a = [10, 11, 2, 31, 4, 52, 6, 73, 8, 91];
+    // let count = 0; // Đặt biến count ở bên ngoài vòng lặp để giữ giá trị đếm
+    //
+    // for (let i = 0; i < a.length; i++) {
+    //     if (a[i] > 10) {
+    //         count++;
+    //         document.write(a[i] + '<br>');
+    //     }
+    // }
+    //
+    // document.write(count);
+
+    // let a = []; // Khởi tạo mảng trống
+    // let existingNumbers = {}; // Khởi tạo một đối tượng để theo dõi các giá trị đã tồn tại
+    //
+    // for (let i = 0; i < 10; i++) {
+    //     let input;
+    //     let number;
+    //
+    //     do {
+    //         input = prompt("Nhập phần tử khác nhau: ", ''); // Yêu cầu người dùng nhập vào phần tử
+    //         number = parseInt(input); // Chuyển đổi đầu vào thành số nguyên
+    //     } while (isNaN(number) || existingNumbers[number]); // Lặp lại nếu đầu vào không phải là số hoặc số đã tồn tại trong đối tượng
+    //
+    //     a.push(number); // Thêm phần tử vào mảng
+    //     existingNumbers[number] = true; // Cập nhật đối tượng để đánh dấu số này đã tồn tại
+    //
+    // }
+    //
+    // document.write("Mảng đã nhập: " + a);
+    //
+    // let maxValue = a[0];
+    // let maxIndex = 0;
+    //
+    // for (let i = 1; i <= a.length; i++){
+    //     if (a[i] > maxValue){
+    //         maxValue = a[i];
+    //         maxIndex = i;
+    //     }
+    // }
+    //
+    // document.write("Phan tu lon nhat: " + maxValue);
+    // document.write("Vi tri cua ptln: " + maxIndex);
+
+
+    // let a = [];
+    // let existingNumber = {};
+    // let count=0;
+    // let tong = 0;
+    //
+    // for (let i = 0; i < 10; i++) {
+    //     let number;
+    //     do {
+    //         number = parseInt(prompt("Nhap phan tu: ", '')); // Chuyển đổi đầu vào thành số nguyên
+    //     } while (isNaN(number) || existingNumber[number]);
+    //     count++;
+    //
+    //     a.push(number);
+    //     existingNumber[number] = true;
+    //     tong += a[i];
+    // }
+    //
+    // document.write(a + '<br>');
+    //
+    // let Max = a[0];
+    //
+    // for (let i = 1; i <= a.length; i++){
+    //     if (Max < a[i]){
+    //         Max = a[i];
+    //     }
+    // }
+    //
+    // document.write(Max + '<br>');
+    // document.write(tong/count);
+
+    let a = [];
+    let existingNumber = {};
+
+    for (let i=0; i<10; i++){
+        let number;
+        do {
+            number = prompt("Nhap vao mang: ", '');
+        }while (isNaN(number) || existingNumber[number]);
+
+        a.push(number);
+    }
+
+
+
+    document.write(a);
+
+
+
+
+</script>
+</html>

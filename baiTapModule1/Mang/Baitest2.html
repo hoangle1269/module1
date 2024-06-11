@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let arrInt = [];
+    // let x;
+    // let n;
+
+
+    function insertNumberToArray (arrInt, x, n) {
+        for (let i = 0; i < arrInt.length; i++) {
+            if (x < 0 || x > arrInt.length) {
+                document.write(arrInt[i] + ", "); //return arrInt
+            }
+            else
+                arrInt.splice(x, 0, n);
+
+        }
+        return document.write(arrInt[i] + ", ");
+    }
+    let a1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let x1 = 8;
+    let n1 = 5;
+    insertNumberToArray(a1, x1, n1)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("NHap vao so phan tu nho hon hoac bang 20: ");
+
+    let arr = [];
+
+    for (let i = 0; i <= n; i++) {
+        let phanTu = +prompt("Nhap vao phan tu: ");
+        arr.push(phanTu);
+    }
+    for (var ele in arr) {
+        document.write("Phan tu trong mang: " + arr[ele] + '<br>');
+    }
+    let sumChan = 0;
+    let sumLe = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            sumChan += arr[i];
+        }
+        else
+            sumLe += arr[i];
+    }
+
+    document.write("Hieu tong chan tru le: " + (sumChan - sumLe));
+
+
+
+</script>
+</body>
+</html>

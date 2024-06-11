@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Move and Record Position</title>
+</head>
+<body>
+<img src="Gio.jpg" alt="" id="gio" style="position:absolute; left:50%; bottom:0; transform:translateX(-50%);" width="100" height="100">
+<script>
+    let element = document.getElementById("gio");
+
+    function initializePosition() {
+        // Set initial position
+        element.style.left = (window.innerWidth / 2 - element.offsetWidth / 2) + 'px';
+        element.style.bottom = '0px'; // Ensure it's at the bottom
+        element.style.transform = 'none'; // Remove transform for direct pixel manipulation
+
+        // Record initial position
+        console.log("Initial Position:", getPosition());
+    }
+
+    function getPosition() {
+        return {
+            left: parseInt(element.style.left),
+            bottom: parseInt(element.style.bottom)
+        };
+    }
+
+    function logPosition() {
+        let position = getPosition();
+        console.log(`Position - Left: ${position.left}px, Bottom: ${position.bottom}px`);
+    }
+
+    function moveLeft() {
+        element.style.left = (parseInt(element.style.left) - 5) + 'px';
+        logPosition();
+    }
+
+    function moveRight() {
+        element.style.left = (parseInt(element.style.left) + 5) + 'px';
+        logPosition();
+    }
+
+    function moveSelection(event) {
+        switch (event.keyCode) {
+            case 37: // Left arrow key
+                moveLeft();
+                break;
+            case 39: // Right arrow key
+                moveRight();
+                break;
+        }
+    }
+
+    function doReady() {
+        initializePosition();
+        window.addEventListener('keydown', moveSelection);
+    }
+
+    window.onload = doReady;
+</script>
+</body>
+</html>

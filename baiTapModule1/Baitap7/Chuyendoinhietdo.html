@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>CHUYEN DOI F SANG C</h1>
+<label>
+    <input type="number" placeholder="DO F" id="f"> DO F <br>
+</label>
+<button onclick="chuyendoiFtoC()">F to C</button>
+<script>
+    function chuyendoiFtoC(){
+        let doF = +document.getElementById('f').value;
+        let doC = (doF-32)/9*5;
+        document.write(doC + "Do C")
+    }
+</script>
+</body>
+</html>

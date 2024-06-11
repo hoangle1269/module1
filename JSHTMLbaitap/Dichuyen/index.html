@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Continuous Image Movement</title>
+</head>
+<body>
+<img src="Godzilla.jpg" alt="" style="width: 200px; position: absolute; top: 100px; left: 500px;" id="x">
+<!--<button onclick="changeDirection('right')">Right</button>-->
+<!--<button onclick="changeDirection('down')">Down</button>-->
+<!--<button onclick="changeDirection('left')">Left</button>-->
+<!--<button onclick="changeDirection('up')">Up</button>-->
+<!--<button onclick="stopMovement()">Stop</button>-->
+
+<script>
+    let direction = 'right';
+    const stepSize = 5;
+    const intervalTime = 50; // Milliseconds
+    let intervalId;
+
+    function moveImage() {
+        let img = document.getElementById('x');
+        let left = parseInt(img.style.left);
+        let top = parseInt(img.style.top);
+
+        switch (direction) {
+            case 'right':
+                left += stepSize;
+                if (left > window.innerWidth) left = -img.width;
+                break;
+            case 'down':
+                top += stepSize;
+                if (top > window.innerHeight) top = -img.height;
+                break;
+            case 'left':
+                left -= stepSize;
+                if (left < -img.width) left = window.innerWidth;
+                break;
+            case 'up':
+                top -= stepSize;
+                if (top < -img.height) top = window.innerHeight;
+                break;
+        }
+
+        img.style.left = left + 'px';
+        img.style.top = top + 'px';
+    }
+
+    function changeDirection(newDirection) {
+        direction = newDirection;
+    }
+
+    // function stopMovement() {
+    //     clearInterval(intervalId);
+    // }
+
+    document.addEventListener('keydown', function(event) { //di chuyen
+        switch(event.key) {
+            case 'ArrowRight':
+                changeDirection('right');
+                break;
+            case 'ArrowDown':
+                changeDirection('down');
+                break;
+            case 'ArrowLeft':
+                changeDirection('left');
+                break;
+            case 'ArrowUp':
+                changeDirection('up');
+                break;
+        }
+    });
+
+    intervalId = setInterval(moveImage, intervalTime);
+</script>
+</body>
+</html>

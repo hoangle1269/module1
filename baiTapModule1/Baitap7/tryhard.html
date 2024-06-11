@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm Bộ Ba (X, Y, Z)</title>
+</head>
+<body>
+<h1>Đếm số lượng bộ ba (X, Y, Z)</h1>
+
+<script>
+    // N = 10; // Thay đổi giá trị N tùy theo yêu cầu
+    //const S = 20; // Thay đổi giá trị S tùy theo yêu cầu
+    let N = +prompt("Nhap vao N: ");
+    let S = +prompt("Nhap vao S: ");
+    let count = 0;
+
+    for (let X = 0; X <= N; X++) {
+        for (let Y = 0; Y <= N; Y++) {
+            let Z = S - X - Y;
+            if (0 <= Z && Z <= N) {
+                count++;
+                document.write(X + ',' + Y + ',' + Z +'<br>')
+            }
+        }
+    }
+    document.write(`Số lượng bộ ba (X, Y, Z) thỏa mãn là: ${count}`);
+</script>
+</body>
+</html>

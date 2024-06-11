@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle of Asterisks</title>
+</head>
+<body>
+<script>
+    var rows = 5;
+
+    for (var i = 0; i < rows; i++) {
+        var spaces = '';
+        var stars = '';
+
+        for (var j = 0; j < i; j++) {
+            spaces += '&nbsp;&nbsp;';
+        }
+
+        for (var k = 0; k < rows - i; k++) {
+            stars += '*';
+        }
+
+        document.write(spaces + stars + '<br>');
+    }
+</script>
+</body>
+</html>

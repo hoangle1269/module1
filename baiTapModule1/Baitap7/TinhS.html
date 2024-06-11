@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // let n = +prompt("Nhap n");
+    // let S = 0;
+    //
+    // for (let i=0; i<=n; i++){
+    //     S += (2*i+1)/(2*i+2);
+    //     console.log(S);
+    // }
+    // document.write("S bang: " +S);
+
+    // for (let i=1; i<=n;i++){
+    //     S += i*(i+1);
+    //     console.log(S);
+    // }
+    // document.write("S bang: "+S);
+    let a = +prompt("Nhap a: ");
+    let b = +prompt("Nhap b: ");
+
+    for (let i=a; i <= b; i++){
+
+        if (i % 3 === 0){
+            document.write("Fizz" +'<br>');
+        }
+        else if (i % 5 === 0){
+            document.write('Buzz' +'<br>');
+        }
+        else if (i % 3 === 0 && i % 5 ===0){
+            document.write('FizzBuzz' +'<br>')
+        }
+        else {
+            document.write(i +'<br>')
+        }
+
+    }
+
+</script>
+</html>

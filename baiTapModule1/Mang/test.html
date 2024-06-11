@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--// 1. có 1 cách khai báo biến let var const-->
+<!--// 2. có 3 kdl: string, integer, boolean, null, undefined, symbol-->
+<!--// 3. cách để quy định kdl: dùng "", parseInt, +prompt-->
+<!--// 4. 4 cách để hien thi: alert(); console.log(); document.write(); innerHTML; innerText; value-->
+<!--// 5. cach nhap a: input, prompt-->
+<!--<h1 id="in"></h1> //6-->
+<!--<img id="abc" src="" alt="" width="30px" height="50">-->
+<!--<h3 id="a"></h3>-->
+
+<!--<h1 id="ten"></h1>-->
+<!--<img id="varsrc" src="" alt="" width="30px" height="50">-->
+
+<h1 id="ab"></h1><br>
+<h1 id="sole"></h1><br>
+<h2 id="sochan"></h2><br>
+<h1 id="ale"></h1><br>
+<h2 id="achan"></h2><br>
+<script>
+    // document.getElementById("in").innerHTML = "In ra trong HTML"; hoac cho the vao trong luon "<h1>'Hello'</h1>"
+    // document.getElementById("abc").src = "https://www.kollerauktionen.ch/CatCache/catcache.1/pictures/506302/506302_M_1.jpg";
+    // let a = 'bai6';
+    // document.getElementById("a").innerHTML = a;
+    //
+    // //7. nhap vao ten, in ra
+    // let ten = prompt("NHap vao ten: ", '');
+    // document.write(ten);
+    //
+    // //8
+    // let so = +prompt("Nhap vao so: ", '');
+    // let bp = so**2;
+    // document.write(bp);
+    //
+    // //9
+    // document.getElementById('ten').innerHTML = (ten);
+    //
+    // //10
+    // let biensrc = prompt("Nhap duong dan: ", '');
+    // document.getElementById("varsrc").src = (biensrc);
+
+    // //11
+    // let age = prompt("Nhap vao tuoi: ");
+    // if (age > 18){
+    //     document.write("Du tuoi");
+    // }else
+    //     document.write("De ko co");
+
+    //12
+    // let chanle = prompt("Nhap vao de: ", '');
+    // if (chanle%2===0){
+    //     document.write("Hello");
+    // }else
+    //     document.write("Hi");
+
+    // //14
+    // let a = +prompt("Nhap a: ", '');
+    // let b = +prompt("NHap b: ", '');
+    // let c = +prompt("Nhap c: ", '');
+    // let max = a;
+    // if (a > b && a > c){
+    //     document.write(a);
+    // }
+    // if (b > c && b >a){
+    //     document.write(b);
+    // }
+    // if (c > b && c > a){
+    //     document.write(c);
+    // }
+
+    // //15
+    // for (let i=0; i<=100; i++){
+    //     document.write("Hello" + i +'<br>');
+    // }
+
+    // //16
+    // let N = prompt("Nhap N: ", '');
+    // for (let i = 0; i<=N; i++){
+    //     document.write("Hello" + i + '<br>');
+    // }
+
+    // //17
+    // for (let i = 1; i<=1000; i++){
+    //     document.write(i + '<br>');
+    // }
+
+    //18
+    // let a = +prompt("Nhap a: ", '');
+    // let b = +prompt("Nhap b: ", '');
+    // let result = "";
+    // for (let i=a; i<=b; i++){
+    //     document.write(i + '<br>');
+    //     result += i + "";
+    //     document.getElementById("ab").innerHTML = (result); //19
+    // }
+
+    // //20
+    // let a = +prompt("Nhap a: ", '');
+    // let b = +prompt("Nhap b: ", '');
+    // let chan = "";
+    // let le = "";
+    //
+    // for (let i=a; i<=b; i++){
+    //     if (i%2===0){
+    //         chan += i + "";
+    //     }else
+    //         le += i + "";
+    //
+    // }
+    // document.getElementById("sochan").innerHTML = (chan);
+    // document.getElementById("sole").innerHTML = (le);
+
+    // //21
+    // let a = +prompt("Nhap a: ", '');
+    // let b = +prompt("Nhap b: ", '');
+    // let tich = 1;
+    // for (let i=a; i<=b; i++){
+    //     tich *= i;
+    // }
+    // document.write(tich);
+
+    // //22//23
+    // let a = +prompt("Nhap a: ", '');
+    // let b = +prompt("Nhap b: ", '');
+    // let tong = 0;
+    // let count = 0;
+    // for (let i=a; i<=b; i++){
+    //     if (i%5===2){
+    //         tong += i;
+    //         count++;
+    //     }
+    // }
+    // document.write(tong);
+    // document.write(count);
+
+    //24 //28 //30
+    // let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 , 10];
+    // let tich = 1;
+    // let tong = 0;
+    // for (let element in arr){
+    //     tich *= arr[element];
+    //     tong += arr[element];
+    //     document.write("element = " + arr[element]);
+    // }
+    //
+    // document.write(tich);
+    // document.write(tong);
+
+
+    // }
+    // for (let i =0; i < arr.length; i++){ //duyet mang
+    //     document.write("element = " + arr[i]);
+    // }
+    //26 27
+    // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9 ,10];
+    // let arrchan = "";
+    // let arrle = "";
+    // let tichchan = 1;
+    // let tongarr = 0;
+    // let tongchan = 0;
+    // for (let i =0; i < arr.length; i++){
+    //     if (arr[i]%2===0){
+    //         arrchan += arr[i] + "";
+    //         tichchan *= arr[i]; //29
+    //         tongchan += arr[i]; //31
+    //         document.getElementById("achan").innerHTML = (arrchan + '<br>');
+    //         document.write(tichchan + '<br>');
+    //         document.write(tongchan + '<br>');
+    //
+    //     }
+    //     else
+    //         arrle += arr[i] + "";
+    //         document.getElementById("ale").innerHTML = (arrle + '<br>');
+    // }
+
+    //33
+    // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9 ,10, 11, 12];
+    // let max = arr[0];
+    // let count = 0;
+    // for (let i =0; i < arr.length; i++){
+    //     // if (max < arr[i]){ //32
+    //     //     max = arr[i];
+    //     // }
+    //     if (arr[i]%2===0 && max < arr[i]){
+    //         max = arr[i];
+    //     }
+    //     if (arr[i]%5===2){
+    //         count++;
+    //         document.write(arr[i]);
+    //     }
+    // }
+    // document.write(max);
+    // document.write(count); //34
+
+
+
+    //35 //36
+    let arr = [1, 2, 3, 3, 3, 3, 4, 4, 5, 6, 7, 8, 9 ,10, 11, 12];
+    let a = +prompt("Nhap vao a: ", '');
+    let count = 0;
+    for (let i=0; i<arr.length; i++){
+
+        if(arr[i]===a){
+            count++;
+            document.write(i);
+        }
+    }
+    document.write(count);
+
+
+
+
+
+</script>
+</body>
+</html>

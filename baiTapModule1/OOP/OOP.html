@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // CU PHAP OOP
+    // let list = [
+    //     {
+    //         name: 'Iphone',
+    //         price: 1000,
+    //         quantity: 50
+    //     },
+    //     {
+    //         name: 'SS',
+    //         price: 1500,
+    //         quantity: 20
+    //     },
+    //     {
+    //         name: 'Xiaomi',
+    //         price: 500,
+    //         quantity: 100
+    //     }
+    // ]
+
+    // for (let i=0; i <= list.length; i++){
+    //     document.write(`${list[i].name}, ${list[i].price}, ${list[i].quantity}`);
+    // }
+
+    // function tongKho() {
+    //     let tongGia = 0;
+    //     for (let i = 0; i < list.length; i++) {
+    //         tongGia += list[i].price * list[i].quantity;
+    //     }
+    //     return tongGia;
+    // }
+    //
+    // document.write(tongKho());
+    //
+    //
+    // function giaCao() {
+    //     for (let i = 0; i < list.length; i++) {
+    //         if (list[i].price > 500) {
+    //             return list[i].name;
+    //         }
+    //     }
+    //     return null; // Return null if no price is greater than 500
+    // }
+    //
+    // document.write(giaCao());
+    //
+    // function timKiem () {
+    //    for (let i = 0; i < list.length; i++) {
+    //        let nhapTen = prompt("Nhap ten sp: ", '');
+    //         if (nhapTen === list[i].name) {
+    //             return list[i].name + list[i].price + list[i].quantity;
+    //         }
+    //     }
+    //     return null; // Return null if no price is greater than 500)
+    // }
+    //
+    // document.write(timKiem());
+
+    //CU PHAP CLASS
+
+    // class Rectangle {
+    //     constructor(cd, cr) {
+    //         this.cd = cd;
+    //         this.cr = cr;
+    //     }
+    //
+    //     getP () { //ham trong class
+    //         return 2* (this.cd + this.cr);
+    //     }
+    //     getS () {
+    //         return this.cd * this.cr;
+    //     }
+    // }
+    //
+    // let r1 = new Rectangle(100, 15)
+    // alert(r1.getP());
+    // alert(r1.getS());
+
+    // class Temperature {
+    //     constructor(c) {
+    //         this.c = c;
+    //     }
+    //
+    //     getF () { //ham trong class
+    //         return this.c * 9/5 + 32;
+    //     }
+    //     getK () {
+    //         return this.c + 273;
+    //     }
+    // }
+    //
+    // let t1 = new Temperature(100);
+    // alert(t1.getK());
+    // alert(t1.getF());
+
+    class Mouse {
+        constructor(n, w) {
+            this.name = n;
+            this.weight = w;
+            this.isDead = false;
+        }
+
+        getI4 () { //ham trong class
+            let str = this.isDead? "Da chet": "Con song";
+            alert (this.name + ', ' + this.weight + str);
+        }
+    }
+
+
+    class Cat {
+        constructor(n, w) {
+            this.name = n;
+            this.weight = w;
+        }
+
+        getI4 () { //ham trong class
+            alert(this.name + ', ' + this.weight);
+        }
+        eat (mouse) {
+            this.weight += mouse.weight / 2;
+            mouse.isDead = true;
+            mouse.weight = 0;
+        }
+    }
+
+    let c = new Cat("Tom", 10);
+    let m = new Mouse("Jerry", 1);
+
+    c.getI4();
+    m.getI4();
+    c.eat(m);
+    c.getI4();
+    m.getI4();
+
+</script>
+</body>
+</html>

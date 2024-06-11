@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beer Catcher Game</title>
+    <link rel="stylesheet" href="landingPage.css">
+
+</head>
+<body>
+<div id="container">
+    <div id=""></div>
+    <button id="playButton" onclick="startGame()">PLAY</button>
+    <audio id="backGroundMusic" src="opening.mp3" loop></audio>
+</div>
+
+<script>
+
+    function startGame() {
+        document.getElementById('backGroundMusic').pause();
+        document.getElementById('startGameSound').play();
+        setTimeout(() => {
+            window.location.href = 'mainGame.html';
+        }, 3300);
+    }
+
+</script>
+
+<audio id="startGameSound" src="123zo.mp3"></audio>
+
+</body>
+</html>

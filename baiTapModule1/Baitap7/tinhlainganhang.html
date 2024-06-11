@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+cong thuc: S = x(1+y)^n voi S - tong tien, x so tien ban dau, y la lai suat, n so thang
+let tienBanDau = +prompt('So tien ban dau: ')
+let lai = +prompt ('Lai 1 thang');
+let soThang = +prompt('SO thang');
+alert(tienBanDau*(1+lai)**soThang);
+<script>
+    let phut = +prompt('Nhap thoi gian: ');
+    let gia = 0;
+    if (phut<10){
+        gia = 2000;
+    }
+    if (phut >=10 && phut <60){
+        gia = 1800;
+    }
+    if (phut >=60){
+        gia = 1500
+    }
+    alert(phut*gia)
+
+    let soDien = +prompt('Nhap thoi gian: ');
+    let dongia = 0;
+    if (soDien<=100){
+        dongia = 2000;
+        alert("Tien dien: " + dongia*soDien)
+    }
+    if (soDien >=100 && soDien <500){
+        dongia = 2500;
+        alert("Tien dien: " + 100*2000 + (soDien-100)*2500)
+    }
+    if (soDien >=500){
+        dongia = 3500
+        alert("Tien dien: " + 100*2000 + 400*2500 + (soDien-500)*3500)
+    }
+</script>
+</body>
+</html>

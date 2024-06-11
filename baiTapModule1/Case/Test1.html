@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Move Images</title>
+</head>
+<body>
+<img src="Bia.jpg" alt="" id="bia" style="position:absolute; left:0; top:0;" width="40" height="169">
+<img src="Gio.jpg" alt="" id="gio" style="position:absolute; left:0; bottom:0;" width="100" height="60">
+<div id="diem">DIEM: 0</div>
+<div id="diemCao">DIEM CAO: 0</div>
+<button id="choiLai">CHOI LAI</button>
+
+<script>
+    let score = 0;
+    let highScore = 0;
+
+    function updateScore() {
+        score += 100;
+        document.getElementById('diem').innerText = "DIEM: " + score;
+        if (score > highScore) {
+            highScore = score;
+            document.getElementById('diemCao').innerText = "DIEM CAO: " + highScore;
+        }
+    }
+
+    function leftArrowPressed() { // mũi tên trái
+        let caiGio = document.getElementById("gio");
+        caiGio.style.left = parseInt(caiGio.style.left) - 25 + 'px';
+        if (parseInt(caiGio.style.left) <= 0) {
+            caiGio.style.left = 0 + 'px';
+        }
+        console.log('vi tri hien tai cua cai gio', parseInt(caiGio.style.left));
+    }
+
+    function rightArrowPressed() { // mũi tên phải
+        let caiGio = document.getElementById("gio");
+        let currentLeft = parseInt(caiGio.style.left) || 0; // Lấy vị trí hiện tại của left, nếu không có sẽ là 0
+        let newLeft = currentLeft + 25; // Di chuyển sang phải 25px
+
+        // Giới hạn di chuyển sang phải
+        let maxRight = window.innerWidth - caiGio.offsetWidth; // Tính toán khoảng cách tối đa sang phải
+        if (newLeft >= maxRight) {
+            newLeft = maxRight; // Đặt vị trí mới thành vị trí tối đa nếu vượt quá
+        }
+
+        caiGio.style.left = newLeft + 'px'; // Áp dụng vị trí mới của left
+    }
+
+    function moveLeftRight(event) { // di chuyển trái phải
+        switch (event.keyCode) {
+            case 37: // Left arrow key
+                leftArrowPressed();
+                break;
+            case 39: // Right arrow key
+                rightArrowPressed();
+                break;
+        }
+    }
+
+    function doReady() { // Giỏ điều khiển trái phải
+        window.addEventListener('keydown', moveLeftRight);
+    }
+
+    doReady();
+
+    let v = 2;
+    let chaiBia = document.getElementById("bia");
+    let caiGio = document.getElementById("gio");
+
+    let intervalId = setInterval(() => {
+        let currentTop = parseInt(chaiBia.style.top) || 0;
+        let newTop = currentTop + v;
+
+        // If the new position exceeds the window height minus the object's height, reset to the top
+        if (newTop + chaiBia.offsetHeight >= window.innerHeight) {
+            clearInterval(intervalId);
+            alert('Ban da thua roi');
+        }
+
+        if (
+            chaiBia.getBoundingClientRect().left + chaiBia.offsetWidth >= caiGio.getBoundingClientRect().left &&
+            chaiBia.getBoundingClientRect().left <= caiGio.getBoundingClientRect().left + caiGio.offsetWidth &&
+            chaiBia.getBoundingClientRect().top + chaiBia.offsetHeight >= caiGio.getBoundingClientRect().top &&
+            chaiBia.getBoundingClientRect().top <= caiGio.getBoundingClientRect().top + caiGio.offsetHeight
+        ) {
+            newTop = 0;
+            chaiBia.style.left = Math.random() * (window.innerWidth - chaiBia.offsetWidth) + 'px';
+            updateScore();
+        }
+
+        chaiBia.style.top = newTop + "px";
+    }, 5);
+
+    document.getElementById("choiLai").addEventListener('click', function() {
+        clearInterval(intervalId);
+        score = 0;
+        document.getElementById('diem').innerText = "DIEM: 0";
+        chaiBia.style.top = '0px';
+        chaiBia.style.left = '0px';
+        intervalId = setInterval(() => {
+            let currentTop = parseInt(chaiBia.style.top) || 0;
+            let newTop = currentTop + v;
+
+            if (newTop + chaiBia.offsetHeight >= window.innerHeight) {
+                clearInterval(intervalId);
+                alert('May lam roi bia roi');
+            }
+
+            if (
+                chaiBia.getBoundingClientRect().left + chaiBia.offsetWidth >= caiGio.getBoundingClientRect().left &&
+                chaiBia.getBoundingClientRect().left <= caiGio.getBoundingClientRect().left + caiGio.offsetWidth &&
+                chaiBia.getBoundingClientRect().top + chaiBia.offsetHeight >= caiGio.getBoundingClientRect().top &&
+                chaiBia.getBoundingClientRect().top <= caiGio.getBoundingClientRect().top + caiGio.offsetHeight
+            ) {
+                newTop = 0;
+                chaiBia.style.left = Math.random() * (window.innerWidth - chaiBia.offsetWidth) + 'px';
+                updateScore();
+            }
+
+            chaiBia.style.top = newTop + "px";
+        }, 5);
+    });
+
+</script>
+</body>
+</html>

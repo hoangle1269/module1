@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GAME HUNG BIA</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #gioiHan {
+            position: relative;
+            width: 66.67%;
+            height: 100%;
+            border: 1px solid black;
+        }
+
+        img {
+            position: absolute;
+        }
+
+        #hienThi {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div id="gioiHan">
+    <img src="Bia.jpg" alt="" id="bia" style="left: 0; top: 0;" width="25" height="100">
+    <img src="Gio.jpg" alt="" id="gio" style="left: 0; bottom: 0;" width="150" height="100">
+</div>
+<div id="hienThi">
+    <div id="diem">DIEM: 0</div>
+    <div id="diemCao">DIEM CAO: 0</div>
+    <button id="choiLai">CHOI LAI</button>
+    <button id="choiGame">CHOI</button>
+    <div id="capDo">LEVEL: 0</div>
+</div>
+
+<script>
+
+    let v = 2;
+    let chaiBia = document.getElementById("bia");
+    let caiGio = document.getElementById("gio");
+    let score = 0;
+    let highScore = localStorage.getItem('highScore') || 0;
+    document.getElementById("diemCao").innerHTML = "Diem cao: " + highScore;
+
+    function leftArrowPressed() { // mũi tên trái
+        let currentLeft = parseInt(caiGio.style.left) || 0;
+        let newLeft = currentLeft - 25;
+        if (newLeft <= 0) {
+            newLeft = 0;
+        }
+        caiGio.style.left = newLeft + 'px';
+    }
+
+    function rightArrowPressed() { // mũi tên phải
+        let currentLeft = parseInt(caiGio.style.left) || 0; // Lấy vị trí hiện tại của left, nếu không có sẽ là 0
+        let newLeft = currentLeft + 25; // Di chuyển sang phải 25px
+
+        // Giới hạn di chuyển sang phải
+        let maxRight = document.getElementById("gioiHan").clientWidth - caiGio.offsetWidth; // Tính toán khoảng cách tối đa sang phải
+        if (newLeft >= maxRight) {
+            newLeft = maxRight; // Đặt vị trí mới thành vị trí tối đa nếu vượt quá
+        }
+        caiGio.style.left = newLeft + 'px'; // Áp dụng vị trí mới của left
+    }
+
+    function moveLeftRight(event) { // di chuyển trái phải
+        switch (event.keyCode) {
+            case 37: // Left arrow key
+                leftArrowPressed();
+                break;
+            case 39: // Right arrow key
+                rightArrowPressed();
+                break;
+        }
+    }
+
+    function doReady() { // Giỏ điều khiển trái phải
+        window.addEventListener('keydown', moveLeftRight);
+    }
+
+    doReady();
+
+    function checkCollision() {
+        let biaRect = chaiBia.getBoundingClientRect();
+        let gioRect = caiGio.getBoundingClientRect();
+        let gioiHanRect = document.getElementById("gioiHan").getBoundingClientRect();
+
+        if (
+            biaRect.bottom >= gioRect.top &&
+            biaRect.left >= gioRect.left &&
+            biaRect.right <= gioRect.right
+        ) {
+            return true;
+        }
+
+        if (biaRect.bottom >= gioiHanRect.bottom) {
+            return false;
+        }
+
+        return null;
+    }
+
+    function gameLoop() {
+        let currentTop = parseInt(chaiBia.style.top) || 0;
+        let newTop = currentTop + v;
+
+        let collision = checkCollision();
+        if (collision === true) {
+            tinhDiem();
+            chaiBia.style.top = '0';
+            chaiBia.style.left = Math.random() * (document.getElementById("gioiHan").clientWidth - chaiBia.offsetWidth) + 'px';
+        } else if (collision === false) {
+            alert('Roi bia roi, ngoo');
+            score = 0;
+            v = 2;
+            chaiBia.style.top = '0';
+            chaiBia.style.left = Math.random() * (document.getElementById("gioiHan").clientWidth - chaiBia.offsetWidth) + 'px';
+            document.getElementById("diem").innerHTML = "Diem: " + score;
+            document.getElementById("capDo").innerHTML = "Cap do: " + 0;
+        } else {
+            chaiBia.style.top = newTop + "px";
+        }
+
+        requestAnimationFrame(gameLoop);
+    }
+
+    function tinhDiem() {
+        score += 100;
+        if (score % 1000 === 0) {
+            v = score / 1000 + 2;
+            document.getElementById("capDo").innerHTML = "Cap do: " + v;
+        }
+
+        document.getElementById("diem").innerHTML = "Diem: " + score;
+        if (score > highScore) {
+            highScore = score;
+            localStorage.setItem('highScore', highScore);
+            document.getElementById("diemCao").innerHTML = "Diem cao: " + highScore;
+        }
+    }
+
+    document.getElementById("choiLai").addEventListener('click', function () {
+        score = 0;
+        v = 2;
+        document.getElementById("diem").innerHTML = "Diem: " + score;
+        chaiBia.style.top = '0';
+        chaiBia.style.left = Math.random() * (document.getElementById("gioiHan").clientWidth - chaiBia.offsetWidth) + 'px';
+    });
+
+    document.getElementById("choiGame").addEventListener('click', function () {
+        score = 0;
+        v = 2;
+        document.getElementById("diem").innerHTML = "Diem: " + score;
+        chaiBia.style.top = '0';
+        chaiBia.style.left = Math.random() * (document.getElementById("gioiHan").clientWidth - chaiBia.offsetWidth) + 'px';
+    });
+
+    gameLoop();
+
+</script>
+</body>
+</html>

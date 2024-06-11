@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    function birthdayCakeCandles(candles) {
+        // Write your code here
+        let candles = [];
+        count = 0;
+        let n = prompt("Size of candles: ", '');
+        for (let i = 0; i < n; i++) {
+            let c = prompt("Input index: " + i);
+            if (c >= 1 && c <= n) {
+                candles.push(c);
+            }
+        }
+        for (let i = 0; i < candles.length; i++) {
+            let highestCandle = candles[0];
+            if (highestCandle < candles[i]) {
+                highestCandle = candles[i];
+            }
+        }
+        for (let i = 0; i < candles.length; i++) {
+            if (highestCandle === candles[i]) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+</script>
+</html>

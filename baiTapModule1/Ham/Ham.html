@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--onload="baiHai()"-->
+<!--onload="baiHai()"-->
+<!--onload="alertMessage()"-->
+<!--<label for="inp"></label>NHap vao <input id = "inp">-->
+<h1></h1>
+<script>
+    // let a = +prompt("demo a: ");
+    // let b = +prompt("demo b: ");
+    // function add(a, b) {
+    //     if (a > b){
+    //         document.write("Thong bao");
+    //     }
+    //     else {
+    //         return a+b;
+    //     }
+    // }
+    //
+    // let result = add(a, b);
+    //
+    // console.log(result);
+    // document.write(result);
+    // let a = +prompt("Nhap a: ");
+    // let b = +prompt("Nhap b: ");
+    // let c = +prompt("Nhap c: ");
+    // let max = a;
+    // if (max < b){
+    //     max = b;
+    // }
+    // if (max < c){
+    //     max = c;
+    //     }
+    // document.write(max);
+
+    // function alertMessage(){
+    //     document.write("Chao xin");
+    //     alert("Chao xìn");
+    // }
+
+    // function baiHai(num) {
+    //     return num+1;
+    // }
+    // document.write(baiHai(5));
+
+    // let a = +prompt("Tham so a: ", '');
+    // let b = +prompt("Tham so b: ", '');
+    //
+    // function twoPara(a, b) {
+    //     if (a > b) {
+    //         alert("a > b");
+    //     } else
+    //         return a * b;
+    // }
+    //
+    // let result = twoPara(a, b);
+    // document.write(result);
+
+    // function addNumbers() {
+    //     const firstNum = 4;
+    //     const secondNum = 8;
+    //     result = firstNum + secondNum;
+    //     alert(result);
+    //     return result;
+    // }
+    // result = 0;
+    // result = addNumbers();
+    // alert(result);
+
+    // let nhapTen = prompt("Nhap ten ngoi sao", '');
+    // let arr = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    // let arrTwo = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    //
+    // function traTen(arr, arrTwo, nhapTen) {
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (arr[i] === nhapTen) {
+    //             return (arrTwo[i]);
+    //         }
+    //     }
+    //     return ("Sai ten chom sao");
+    // }
+    //
+    // let rs = traTen(arr, arrTwo, nhapTen);
+    // document.write(rs);
+
+    // let so = +prompt("Nhap so: ", '');
+    //
+    // function hamTinh (so) {
+    //     let binhPhuong = so**2;
+    //     return binhPhuong;
+    // }
+    //
+    // document.write(hamTinh(so));
+
+    // function hamTinh(so) {
+    //     return so ** 2;
+    // }
+    // let so = +prompt("Nhập số:", '');
+    // document.write(isNaN(so) ? "Vui lòng nhập số hợp lệ" : "Bình phương của " + so + " là: " + hamTinh(so));
+
+    // let r = +prompt("Nhap vao bk hinh tron: ", '');
+    //
+    // function pS(r) {
+    //     let p = 2 * Math.PI * r;
+    //     let s = Math.PI * (r**2);
+    //     return p + ", " + s;
+    // }
+    //
+    // document.write(pS(r));
+
+
+    // function giaiThua(n) {
+    //     let giaTri = 1;
+    //     for (let i = 1; i <= n; i++) {
+    //         giaTri *= i;
+    //     }
+    //     return giaTri;
+    // }
+    //
+    // let n = +prompt("Nhap so nguyen vao: ", '');
+    // document.write(giaiThua(n));
+
+    // let unKnown = prompt("Nhap thong tin vao: ", '');
+    //
+    // function kiemTra (unKnown){
+    //     if (isNaN(unKnown)){
+    //         return "False";
+    //     }
+    //     else
+    //         return "True";
+    // }
+    //
+    // document.write(kiemTra(unKnown));
+
+    // let soN = +prompt("Nhap vao so nguyen: ", '');
+    //
+    // function amDuong(soN) {
+    //     return soN > 0;
+    // }
+    // document.write(amDuong(soN));
+
+    // let numA = +prompt("So nguyen a: ", '');
+    // let numB = +prompt("So nguyen B: ", '');
+    // let numC = null;
+    //
+    // function daoNguoc (numA, numB) {
+    //     numC = numA;
+    //     numA = numB;
+    //     numB = numC;
+    //     return "a" + "=" + numA + ", " + "b" + "=" + numB;
+    //     //[numA, numB] = [numB, numA];
+    // }
+    // document.write(daoNguoc(numA, numB));
+
+    // let arr = [];
+    // let n = prompt("Nhap vao so phan tu: ", '');
+    //
+    // function daoNguoc(n) {
+    //     for (let i = 0; i <= n; i++) {
+    //         let j = prompt("Nhap vao phan tu: ");
+    //         arr.push(j);
+    //     }
+    //     return arr.reverse().join(", ");
+    // }
+    // document.write(daoNguoc(n));
+
+    let arr = [];
+    let n = +prompt("Số phần tử trong mảng:", '');
+
+    function batKy(n) {
+        for (let i = 0; i < n; i++) {
+            let j = +prompt("Nhập phần tử:", '');
+            arr.push(j);
+        }
+
+        let kyTu = +prompt("Nhập ký tự bất kỳ:", '');
+        let count = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (kyTu === arr[i]) {
+                count++;
+            }
+        }
+
+        return count > 0 ? count : -1;
+    }
+
+    document.write(batKy(n));
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

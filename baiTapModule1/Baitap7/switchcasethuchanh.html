@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var browser = prompt("ENter browser name!", '')
+    switch (browser){
+        case 'Edge':
+            alert("YOu've got to the Edge");
+            break;
+        case 'Chrome':
+        case 'Firefox':
+        case 'Safari':
+        case 'Opera':
+            alert('Okay we support these browsers too');
+            break;
+        default:
+            alert('We hope that this page looks ok');
+    }
+    let a = prompt('a?', '');
+    switch (a){
+        case '0':
+            alert('0');
+            break;
+        case '1':
+            alert('1');
+            break;
+        case '2':
+        case '3':
+            alert('2,3')
+    }
+    let number = prompt("Nhap so: ", '');
+    if (number > 0){
+        alert ('1');
+    }else if (number < 0) {
+        alert('-1')
+    }else
+        alert('0')
+
+    let no = prompt("Nhap so vao day: ", '');
+
+    // Convert the input to a number
+    no = parseFloat(no);
+
+    let result;
+
+    switch (true) {
+        case (no > 0):
+            result = 1;
+            break;
+        case (no < 0):
+            result = -1;
+            break;
+        default:
+            result = 0;
+    }
+
+    alert(result);
+
+
+</script>
+</body>
+</html>

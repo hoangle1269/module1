@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class dienThoai {
+                constructor (ma, ten, hang, gia) {
+            this._ma = ma;
+            this._ten = ten;
+            this._hang = hang;
+            this._gia = gia;
+        }
+
+        get ma() {
+            return this._ma;
+        }
+
+        set ma(value) {
+            this._ma = value;
+        }
+
+        get ten() {
+            return this._ten;
+        }
+
+        set ten(value) {
+            this._ten = value;
+        }
+
+        get hang() {
+            return this._hang;
+        }
+
+        set hang(value) {
+            this._hang = value;
+        }
+
+        get gia() {
+            return this._gia;
+        }
+
+        set gia(value) {
+            this._gia = value;
+        }
+
+        toString() {
+            return `Mã: ${this._ma}, Tên: ${this._ten}, Hãng: ${this._hang}, Giá: ${this._gia}`;
+        }
+
+    }
+
+    let danhSach = [];
+
+    // function themMoi(ma, ten, hang, gia) {
+    //     let dtMoi = new dienThoai(ma, ten, hang, gia);
+    //     danhSach.push(dtMoi);
+    // }
+    //
+    // themMoi('iP', "iPhone", "Apple", "$1000");
+    // themMoi("SS", "SS", "SS", "$1000");
+
+    function themMoi() {
+        let ma = prompt("Nhap ma: ");
+        let ten = prompt("Nhap ten: ");
+        let hang = prompt("Nhap hang: ");
+        let gia = prompt("Nhap gia: ");
+
+        let dtMoi = new themMoi(ma, ten, hang, gia);
+        danhSach.push(dtMoi);
+    }
+
+    themMoi();
+
+    document.write("Danh sach dien thoai: " + '<br>')
+
+    for (let i = 0; i < danhSach.length; i++) {
+        document.write((i+1) + '. ' + danhSach[i] + '<br>');
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

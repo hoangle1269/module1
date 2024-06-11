@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Shape</title>
+</head>
+<body>
+<script>
+    // Generate heart shape using document.write
+    for (let y = -10; y < 10; y++) {
+        let row = '';
+        for (let x = -10; x < 10; x++) {
+            let insideHeart = (Math.pow(x * 0.04, 2) + Math.pow(y * 0.1, 2) - 1 <= 0);
+            row += (insideHeart ? '*' : '&nbsp;');
+        }
+        document.write(row + '<br>');
+    }
+</script>
+</body>
+</html>

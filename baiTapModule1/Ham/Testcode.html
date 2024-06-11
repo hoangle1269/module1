@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Right-Angled Triangle</title>
+</head>
+<body>
+<script>
+    function createTriangle(rows) {
+        let triangle = "";
+        for (let i = 1; i <= rows; i++) {
+            // Add spaces
+            for (let j = 0; j < rows - i; j++) {
+                triangle += "&nbsp;";
+            }
+            // Add asterisks
+            for (let k = 0; k < i; k++) {
+                triangle += "#";
+            }
+            // Add a <br> tag at the end of each row
+            triangle += "<br>";
+        }
+        return triangle;
+    }
+
+    const rows = 4; // Number of rows for the triangle
+    document.write(createTriangle(rows));
+</script>
+</body>
+</html>

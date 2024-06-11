@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function nhapMang() {
+    //     let soPhanTu;
+    //     while (true) {
+    //         soPhanTu = parseInt(prompt("Nhập số phần tử của mảng: "), 10);
+    //         if (soPhanTu > 0) {
+    //             let mang = [];
+    //             for (let i = 0; i < soPhanTu; i++) {
+    //                 let phanTu = prompt(`Nhập phần tử thứ ${i + 1}:`);
+    //                 mang.push(phanTu);
+    //             }
+    //             return mang;
+    //         } else {
+    //             alert("Số phần tử phải lớn hơn 0. Vui lòng nhập lại.");
+    //         }
+    //     }
+    // }
+    //
+    // // Gọi hàm để nhập mảng
+    // let mang = nhapMang();
+    // console.log("Mảng đã nhập:", mang);
+
+    function nhapMang() {
+        let soPhanTu;
+        while (true) {
+            soPhanTu = +prompt("Nhap so phan tu cua mang: ", '');
+            if (soPhanTu > 0) {
+                let mang = [];
+                for (let i = 0; i < soPhanTu; i++) {
+                    let phanTu = +prompt("Nhap phan tu: ", '');
+                    mang.push(phanTu);
+                }
+                return mang;
+            }else {
+                alert("So phan tu phai > 0 va nho hon 21!")
+            }
+        }
+    }
+
+    let mang = nhapMang();
+    // document.write(mang);
+
+    let sumChan = 0;
+    let sumLe = 0;
+
+    for (let i = 0; i < mang.length; i++) {
+        if (mang[i] % 2 === 0) {
+            sumChan += mang[i];
+        }
+        else
+            sumLe += mang[i];
+    }
+
+    let hieu = sumChan - sumLe;
+
+    document.write(hieu);
+
+</script>
+</body>
+</html>
